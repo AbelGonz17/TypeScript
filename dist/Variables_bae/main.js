@@ -1,0 +1,10 @@
+"use strict";
+let nombre = "Juan";
+let edad = 30;
+let esdesarrollador = true;
+let mes;
+let varaibleNula = null;
+console.log(`mes inicial: ${mes}`);
+console.log(`Hola, ${nombre}!`);
+mes = "Enero";
+console.log(`El mes es: ${mes}`);
