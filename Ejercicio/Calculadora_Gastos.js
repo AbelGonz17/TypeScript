@@ -4,8 +4,11 @@ var readlineSync = require("readline-sync");
 var Categoria;
 (function (Categoria) {
     Categoria["Basura"] = "Basura";
+    Categoria["Transporte"] = "Transporte";
+    Categoria["Salud"] = "Salud";
     Categoria["Agua"] = "Agua";
     Categoria["Mantenimiento"] = "Mantenimiento";
+    Categoria["Alimentacion"] = "Alimentaci\u00F3n";
     Categoria["Gym"] = "Gym";
     Categoria["Otros"] = "Otros";
 })(Categoria || (Categoria = {}));
@@ -18,7 +21,8 @@ while (seguir) {
     Object.values(Categoria).forEach(function (cat, index) {
         console.log("".concat(index + 1, ". ").concat(cat));
     });
-    var categoriaSeleccionada = readlineSync.questionInt('Ingrese categoria (1-4): ');
+    var categoriaSeleccionada = readlineSync.questionInt('Ingrese categoria (1-8): ');
+    //se coloca -1 porque los arrays comienzan en 0
     var categoria = Object.values(Categoria)[categoriaSeleccionada - 1];
     gastos.push({ descripcion: descripcion, monto: monto, categoria: categoria });
     var respuesta = readlineSync.question('¿Desea agregar otro gasto? (s/n): ');

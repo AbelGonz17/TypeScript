@@ -2,9 +2,11 @@ import * as readlineSync from 'readline-sync';
 
 enum Categoria{
     Basura = "Basura",
+    Transporte = "Transporte",
+    Salud = "Salud",
     Agua = "Agua",
     Mantenimiento = "Mantenimiento",
-    comida = "Comida",
+    Alimentacion = "Alimentación",
     Gym = "Gym",
     Otros = "Otros"
 }
@@ -28,7 +30,8 @@ while (seguir) {
         console.log(`${index + 1}. ${cat}`);
     });
 
-    const categoriaSeleccionada = readlineSync.questionInt('Ingrese categoria (1-4): ');
+    const categoriaSeleccionada = readlineSync.questionInt('Ingrese categoria (1-8): ');
+    //se coloca -1 porque los arrays comienzan en 0
     const categoria = Object.values(Categoria)[categoriaSeleccionada - 1];
 
     gastos.push({descripcion, monto, categoria});   
